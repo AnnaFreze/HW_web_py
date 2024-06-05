@@ -11,11 +11,11 @@ RUN pip install --upgrade pip
 RUN pip install gunicorn
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+COPY . /app
 
 EXPOSE 8000
 
-#RUN python manage.py migrate
+RUN python manage.py migrate
 
 #CMD ["python", "manage.py", "runserver", "-b", "0.0.0.0:8000"]
 
